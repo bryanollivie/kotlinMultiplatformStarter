@@ -15,10 +15,73 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-
 import kotlinmultiplatformstarter.composeapp.generated.resources.Res
 import kotlinmultiplatformstarter.composeapp.generated.resources.compose_multiplatform
+import org.bryanollivie.project.feature.login.LoginScreen
+import org.bryanollivie.project.feature.recoverylogin.RecoveryScreen
+import org.koin.compose.KoinApplication
+import org.koin.core.KoinApplication
 
+
+/*@Composable
+fun App() {
+    KoinApplication(application = {
+        modules(commonModule)
+    }) {
+        AppTheme {
+            val navController = rememberNavController()
+
+            NavHost(
+                navController = navController,
+                startDestination = "login"
+            ) {
+                composable("login") {
+                    LoginScreen(
+                        onNavigateToRecovery = {
+                            navController.navigate("recovery")
+                        },
+                        onLoginSuccess = {
+                            // Navegar para tela principal do app
+                            navController.navigate("home") {
+                                popUpTo("login") { inclusive = true }
+                            }
+                        }
+                    )
+                }
+
+                composable("recovery") {
+                    RecoveryScreen(
+                        onNavigateBack = {
+                            navController.popBackStack()
+                        }
+                    )
+                }
+
+                composable("home") {
+                    // Tela principal do app após login
+                    HomeScreen(
+                        onLogout = {
+                            navController.navigate("login") {
+                                popUpTo(0) { inclusive = true }
+                            }
+                        }
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun HomeScreen(onLogout: () -> Unit) {
+    // Implementação da tela principal
+    androidx.compose.foundation.layout.Column {
+        androidx.compose.material3.Text("Bem-vindo ao App!")
+        androidx.compose.material3.Button(onClick = onLogout) {
+            androidx.compose.material3.Text("Logout")
+        }
+    }
+}*/
 @Composable
 @Preview
 fun App() {
